@@ -1,4 +1,4 @@
-# api-console-builder
+# api-console-raml-builder
 This project can be used to automatically generate JSON for an API Console from RAML.
 
 ## Usage
