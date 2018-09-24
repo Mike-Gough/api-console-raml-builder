@@ -4,5 +4,5 @@ This project can be used to automatically generate JSON for an API Console from 
 ## Usage
 1. Run the build process by providing a source directory, a destination directory, a main RAML file name, a JSON file name and a directory seperator:
 ```
-node build.js raml-source-path json-destination-path main-raml-file-name json-file-name seperator
+node build.js raml-source-path json-destination-path raml-source-file-name json-destination-file-name file-seperator
 ```
