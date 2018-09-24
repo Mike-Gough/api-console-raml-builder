@@ -7,16 +7,19 @@ const fse = require('fs-extra');
 const {RamlJsonGenerator} = require('raml-json-enhance-node');
 
 /*
- * Configure api-console builder
+ * Configure raml-json-enhance-node
  */
 const args = process.argv.slice(2);
 const source = (args.length >= 1) ? args[0] : "api-source";
-const destination = (args.length >= 2) ? args[1] : "api-console-build";
+const destination = (args.length >= 2) ? args[1] : "build/api.json";
 const mainFile = (args.length >= 3) ? args[2] : "api.raml";
-const seperator = (args.length >= 4) ? args[3] : "/";
+const destFile = (args.length >= 4) ? args[3] : "api.json";
+const seperator = (args.length >= 5) ? args[4] : "/";
 const tempSource = 'temp-api-source';
 const tempDestination = 'temp-api-console-build';
-const enhancer =  new RamlJsonGenerator(tempSource + seperator + mainFile);
+const enhancer =  new RamlJsonGenerator(tempSource + seperator + mainFile, {
+  output: tempDestination + seperator + destFile
+});
 
 /*
  * Remove temporary directories.
@@ -51,24 +54,21 @@ console.log(' - Successfully copied directory', source, 'to', tempSource)
  */
 console.log('Building RAML with options')
 enhancer.generate()
-.then((json) => {
-  console.log(json);
-});
 .then(function() {
-  console.log(' - API Console build complete')
+  console.log(' - RAML build complete')
 
   /*
    * Move the output to from the temporary
    * directory to the required destination.
    */
-  console.log('Moving API console to destination directory')
+  console.log('Moving RAML to destination directory')
   fse.moveSync(tempDestination, destination, { overwrite: true })
   console.log(' - Successfully moved directory from', tempDestination, 'to', destination)
 
   removeTempDirectories()
 })
 .catch(function(cause) {
-  console.log(' - API Console build error', cause.message)
+  console.log(' - RAML build error', cause.message)
 
   removeTempDirectories()
 })

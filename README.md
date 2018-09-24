@@ -1,8 +1,8 @@
 # api-console-builder
-This project can be used to automatically generate web based documentation for RAML Service Contracts.
+This project can be used to automatically generate JSON for an API Console from RAML.
 
 ## Usage
-1. Run the build process by providing a main RAML file and destination directory:
+1. Run the build process by providing a source directory, a destination directory, a main RAML file name, a JSON file name and a directory seperator:
 ```
-node build.js raml-source-path destination-path main-file-name seperator
+node build.js raml-source-path json-destination-path main-raml-file-name json-file-name seperator
 ```
