@@ -1,0 +1,14 @@
+{
+  "name": "api-console-raml-builder",
+  "version": "1.0.0",
+  "description": "This project can be used to automatically generate web based documentation for RAML Service Contracts.",
+  "main": "build.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "raml-json-enhance-node": "^0.3.2"
+  }
+}
