@@ -14,8 +14,8 @@ const source = (args.length >= 1) ? args[0] : "api-source";
 const destination = (args.length >= 2) ? args[1] : "build";
 const mainFile = (args.length >= 3) ? args[2] : "api.raml";
 const destFile = (args.length >= 4) ? args[3] : "api.json";
-const seperator = (args.length >= 5) ? args[4] : "/";
-const tempSource = 'temp-api-source';
+const seperator = (args.length >= 5) ? args[4] : "\\";
+const tempSource = './temp-api-source';
 const enhancer =  new RamlJsonGenerator(tempSource + seperator + mainFile);
 
 /*
