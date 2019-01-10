@@ -10,5 +10,8 @@
   "license": "ISC",
   "dependencies": {
     "raml-json-enhance-node": "^0.3.2"
-  }
+  },
+  "bundledDependencies": [
+    "raml-json-enhance-node"
+  ]
 }
