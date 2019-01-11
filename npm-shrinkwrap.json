@@ -368,7 +368,15 @@
       "integrity": "sha512-L0uGkiJjKIBripxbcXzbTXdbhttYMsIT2bZQ2BGCOy/gKQVrjb7QXM7rcLxfUMNvjEirQ/caUkEj47WSMbcQpg==",
       "requires": {
         "raml-1-parser": "1.1.47",
-        "raml2obj": "github:advanced-rest-client/raml2obj#c20c9a4f1f125a6e7e3f5451f0d9e40894b37c5b"
+        "raml2obj": "git+https://github.com/advanced-rest-client/raml2obj.git#c20c9a4f1f125a6e7e3f5451f0d9e40894b37c5b"
+      },
+      "dependencies": {
+        "raml2obj": {
+          "version": "git+https://github.com/advanced-rest-client/raml2obj.git#c20c9a4f1f125a6e7e3f5451f0d9e40894b37c5b",
+          "requires": {
+            "datatype-expansion": "0.2.6"
+          }
+        }
       }
     },
     "raml-json-validation": {
@@ -405,12 +413,6 @@
       "optional": true,
       "requires": {
         "xmllint-jsparser": "0.0.3"
-      }
-    },
-    "raml2obj": {
-      "version": "github:advanced-rest-client/raml2obj#c20c9a4f1f125a6e7e3f5451f0d9e40894b37c5b",
-      "requires": {
-        "datatype-expansion": "0.2.6"
       }
     },
     "sax": {
